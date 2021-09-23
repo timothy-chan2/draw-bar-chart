@@ -1,0 +1,22 @@
+body {
+  display: grid;
+  justify-content: center; /* Center horizontally on the page */
+  background-color: rgb(153, 152, 152);
+}
+
+h1 {
+  display: grid;
+  justify-content: center; /* Center horizontally on the page */
+}
+
+.bar {
+  width: 45px; /* Default width of a bar */
+  background-color: blue; /* Default bar color*/
+  color: white; /* Default font color inside the bar*/
+  text-align: center; /* Horizontally center text inside the bar*/
+  font-size: 1.4em;
+}
+
+.xLabel {
+  text-align: center;
+}
