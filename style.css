@@ -7,10 +7,10 @@ body {
 h1 {
   display: grid;
   justify-content: center; /* Center horizontally on the page */
+  margin-bottom: 70px;
 }
 
 .bar {
-  width: 45px; /* Default width of a bar */
   background-color: blue; /* Default bar color*/
   color: white; /* Default font color inside the bar*/
   text-align: center; /* Horizontally center text inside the bar*/

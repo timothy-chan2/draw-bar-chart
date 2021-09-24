@@ -11,9 +11,24 @@
     <script src="drawBarChart.js"></script>
     <!-- Run the function when the DOM has been loaded -->
     <script>
-       $(document).ready(
-        () => { drawBarChart([5, 2, 4, 1, 3], {},'div')
-      });
+      $(document).ready(
+        () => {
+          drawBarChart([5, 2, 4, 1, 3],
+          {
+            width: 400,
+            height: 300,
+            title: 'The Bar Chart',
+            valuePos: 'center',
+            barSpace: 15,
+            titleFontSize: '2.5em',
+            titleColor: 'green',
+            barColor: 'purple',
+            labelColor: 'darkgreen',
+            xLabels: ['Pizza', 'Chips', 'Nuts', 'Apple', 'Coffee'],
+            yLabel: 'x100$;'
+          },
+          'div');
+        });
     </script>
   </head>
   <body>
