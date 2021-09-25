@@ -5,9 +5,13 @@ body {
 }
 
 h1 {
+  font-size: 2.5em;
+}
+
+h1, h2 {
   display: grid;
   justify-content: center; /* Center horizontally on the page */
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 
 .bar {

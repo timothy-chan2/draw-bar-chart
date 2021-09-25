@@ -13,25 +13,48 @@
     <script>
       $(document).ready(
         () => {
+          let count = 1;
+
           drawBarChart([5, 2, 4, 1, 3],
           {
             width: 400,
             height: 300,
-            title: 'The Bar Chart',
+            title: 'Bar Chart 1',
             valuePos: 'center',
             barSpace: 15,
-            titleFontSize: '2.5em',
+            titleFontSize: '1.8em',
             titleColor: 'green',
             barColor: 'purple',
             labelColor: 'darkgreen',
             xLabels: ['Pizza', 'Chips', 'Nuts', 'Apple', 'Coffee'],
             yLabel: 'x100$;'
           },
-          'div');
-        });
+          'div',
+          count);
+
+          count++; // Add this line after each drawBarChart function except for the last chart
+
+          drawBarChart([1, 2, 3, 4],
+          {
+            width: 400,
+            height: 300,
+            title: 'Bar Chart 2',
+            valuePos: 'top',
+            barSpace: 25,
+            titleFontSize: '1.8em',
+            titleColor: 'blue',
+            barColor: 'pink',
+            labelColor: 'darkblue',
+            xLabels: ['Sushi', 'Sashimi', 'Shrimp', 'Bok Choy'],
+            yLabel: 'x10$'
+          },
+          'div',
+          count);
+        }
+      );
     </script>
   </head>
   <body>
-    <!-- Empty body -->
+    <h1>Bar Charts</h1>
   </body>
 </html>
