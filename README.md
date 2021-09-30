@@ -1,4 +1,4 @@
-# README
+# Draw Bar Chart
 
 ## About
 
