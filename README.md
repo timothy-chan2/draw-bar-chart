@@ -12,7 +12,11 @@ Please be sure to start off by using the HTML, CSS, and JS files of the demo pag
 
 ## Example Screenshots
 
+![Simple Bar Chart - English](https://user-images.githubusercontent.com/84679544/135497731-c1092134-3304-4751-b8b4-55d65dab742e.png)
 
+![Stacked Bar Chart - French](https://user-images.githubusercontent.com/84679544/135498053-94e5aac9-ed5e-4661-8529-4d6dd6438738.png)
+
+![Stacked Bar Chart - Japanese](https://user-images.githubusercontent.com/84679544/135498365-2577abf0-f510-4da6-8ff4-a50c4681a523.png)
 
 ## API
 
