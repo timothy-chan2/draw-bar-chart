@@ -1,0 +1,11 @@
+{
+  "name": "stretch-project-1",
+  "version": "0.0.0",
+  "author": "Timothy Chan",
+  "description": "A library that will allow other developers to generate simple or stacked bar charts on their webpages",
+  "keywords": [ "bar chart", "simple", "stacked", "generate", "HTML" ],
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-lighthouselabs": "lighthouse-labs/eslint-config-lighthouselabs"
+  }
+}
