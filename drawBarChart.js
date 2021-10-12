@@ -29,7 +29,7 @@ const addChartContainer = (num, data, options) => {
 }
 
 const addChartYAxis = (num, data, options, barSum) => {
-  let zerosToAdd;
+  let lenDiff, spaces;
 
   $(`#chartContainer${num}`).append(`<div id="yAxis${num}"></div>`);
 
@@ -53,31 +53,77 @@ const addChartYAxis = (num, data, options, barSum) => {
     .css("display", "grid")
     .css("align-items", "end");
 
-  // To ensure there's no spaces between the ticks and the Y axis of the chart by add more digits
+  // To ensure there's no spaces between the ticks and the Y axis of the chart by adding spaces
   if (typeof data[0] === 'number') {
-    zerosToAdd = String(Math.floor(Math.max(...data))).length - String(Math.floor(Math.max(...data) * 3 / 4)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}4">${(Math.max(...data) * 3 / 4).toFixed(2 + zerosToAdd)} _</div>`);
+    $(`#yAxisValues${num}`).append(`<div id="tick${num}4">${(Math.max(...data) * 3 / 4).toFixed(2)} _</div>`);
 
-    zerosToAdd = String(Math.floor(Math.max(...data))).length - String(Math.floor(Math.max(...data) / 2)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${(Math.max(...data) / 2).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...data) * 3 / 4).toString().length - Math.trunc(Math.max(...data) / 2).toString().length;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${spaces}${(Math.max(...data) / 2).toFixed(2)} _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${(Math.max(...data) / 2).toFixed(2)} _</div>`);
+    }
 
-    zerosToAdd = String(Math.floor(Math.max(...data))).length - String(Math.floor(Math.max(...data) / 4)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${(Math.max(...data) / 4).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...data) * 3 / 4).toString().length - Math.trunc(Math.max(...data) / 4).toString().length;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${spaces}${(Math.max(...data) / 4).toFixed(2)} _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${(Math.max(...data) / 4).toFixed(2)} _</div>`);
+    }
 
-    zerosToAdd = String(Math.floor(Math.max(...data))).length - String(Math.floor(Math.max(...data) / 6)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}1">${Number(0.0000000).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...data) * 3 / 4).toString().length - 1;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}1">${spaces}0.00 _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}1">0.00 _</div>`);
+    }
   } else {
-    zerosToAdd = String(Math.floor(Math.max(...barSum))).length - String(Math.floor(Math.max(...barSum) * 3 / 4)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}4">${(Math.max(...barSum) * 3 / 4).toFixed(2 + zerosToAdd)} _</div>`);
+    $(`#yAxisValues${num}`).append(`<div id="tick${num}4">${(Math.max(...barSum) * 3 / 4).toFixed(2)} _</div>`);
 
-    zerosToAdd = String(Math.floor(Math.max(...barSum))).length - String(Math.floor(Math.max(...barSum) / 2)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${(Math.max(...barSum) / 2).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...barSum) * 3 / 4).toString().length - Math.trunc(Math.max(...barSum) / 2).toString().length;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${spaces}${(Math.max(...barSum) / 2).toFixed(2)} _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}3">${(Math.max(...barSum) / 2).toFixed(2)} _</div>`);
+    }
 
-    zerosToAdd = String(Math.floor(Math.max(...barSum))).length - String(Math.floor(Math.max(...barSum) / 4)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${(Math.max(...barSum) / 4).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...barSum) * 3 / 4).toString().length - Math.trunc(Math.max(...barSum) / 4).toString().length;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${spaces}${(Math.max(...barSum) / 4).toFixed(2)} _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}2">${(Math.max(...barSum) / 4).toFixed(2)} _</div>`);
+    }
 
-    zerosToAdd = String(Math.floor(Math.max(...barSum))).length - String(Math.floor(Math.max(...barSum) / 6)).length;
-    $(`#yAxisValues${num}`).append(`<div id="tick${num}1">${Number(0.0000000).toFixed(2 + zerosToAdd)} _</div>`);
+    lenDiff = Math.trunc(Math.max(...barSum) * 3 / 4).toString().length - 1;
+    if (lenDiff !== 0) {
+      spaces = "";
+      for (let i = 0; i < lenDiff; i++) {
+        spaces += "&nbsp;&nbsp;";
+      }
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}1">${spaces}0.00 _</div>`);
+    } else {
+      $(`#yAxisValues${num}`).append(`<div id="tick${num}1">0.00 _</div>`);
+    }
   }
 }
 
