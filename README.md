@@ -14,9 +14,9 @@ Please be sure to start off by using the HTML, CSS, and JS files of the demo pag
 
 ![Simple Bar Chart - English](https://user-images.githubusercontent.com/84679544/135497731-c1092134-3304-4751-b8b4-55d65dab742e.png)
 
-![Stacked Bar Chart - French](https://user-images.githubusercontent.com/84679544/135498053-94e5aac9-ed5e-4661-8529-4d6dd6438738.png)
+![Stacked Bar Chart - French](https://user-images.githubusercontent.com/84679544/137010262-b45f4e20-e7b2-4276-a3ba-ef246f0ff32b.png)
 
-![Stacked Bar Chart - Japanese](https://user-images.githubusercontent.com/84679544/135498365-2577abf0-f510-4da6-8ff4-a50c4681a523.png)
+![Stacked Bar Chart - Japanese](https://user-images.githubusercontent.com/84679544/137010487-ff8c8e0e-2994-483a-a290-fa6bad7189cb.png)
 
 ## API
 
@@ -112,9 +112,7 @@ The following `options` are supported:
 
 ## Known issues / bugs
 
-1. Depending on the range of values displayed, the tick associated with "0" may be detached from the Y axis
-
-2. Entering Japanese characters in the X axis labels will push up the X axis section
+1. Entering Japanese characters in the X axis labels will push up the X axis section
 
 ## Potential future features
 
