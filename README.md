@@ -112,9 +112,7 @@ The following `options` are supported:
 
 ## Known issues / bugs
 
-1. Depending on the range of values displayed, the tick associated with "0" may be detached from the Y axis
-
-2. Entering Japanese characters in the X axis labels will push up the X axis section
+1. Entering Japanese characters in the X axis labels will push up the X axis section
 
 ## Potential future features
 
